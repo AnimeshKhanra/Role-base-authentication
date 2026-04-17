@@ -29,7 +29,7 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 
     if (email) {
-        if (!email.include("@") || email.split("@").length !== 2) {
+        if (!email.includes("@") || email.split("@").length !== 2) {
             throw new ApiError(
                 400,
                 "Invalid email formate: must contain exactly one @ symbol",
@@ -72,7 +72,7 @@ const loginUser = asyncHandler(async (req, res) => {
     }
 
     if (email) {
-        if (!email.include("@") || email.split("@").length !== 2) {
+        if (!email.includes("@") || email.split("@").length !== 2) {
             throw new ApiError(
                 400,
                 "Invalid email formate: must contain exactly one @ symbol",
@@ -134,7 +134,7 @@ const logoutUser = asyncHandler(async (req, res) => {
     .status(200)
     .clearCookie("accessToken", options)
     .clearCookie("refreshToken", options)
-    .json(new ApiResponce(201, {}, "User Logged Out!"))
+    .json(new ApiResponse(201, {}, "User Logged Out!"))
 });
 
 

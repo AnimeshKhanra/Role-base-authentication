@@ -1,4 +1,4 @@
-import exress, { Router } from "express";
+import express, { Router } from "express";
 import { verifyJWT } from "../middlewares/auth.middlewares.js";
 import { isAdmin } from "../middlewares/role.middlewares.js";
 import {
