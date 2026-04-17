@@ -14,5 +14,10 @@ app.use(express.json({limit: "16kb"}));
 app.use(express.static("public"));
 app.use(cookeiParser());
 
+// import route
+import authRouter from "./routers/auth.routers.js"
+
+app.use("/api/v1/user", authRouter);
+
 
 export { app };
